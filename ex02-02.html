@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p><a href="/">홈으로</a></p>
+    <fieldset>
+      <legend>패턴테스트</legend>
+      <!-- form>(input+br)*3+div -->
+      <form action="ex02-01a0.html">
+        <label for="user-id">Id : </label>
+        <input
+          type="text"
+          name=""
+          id="user-id"
+          pattern="[a-zA-Z]{3,7}"
+          required
+        /><br />
+        <label for="user-pw">Pw : </label>
+        <input type="text" name="" id="user-pw" required /><br />
+        <label for="user-etc">Etc : </label>
+        <input
+          type="text"
+          name=""
+          id="user-etc"
+          value="당신은 멋집니다. "
+          readonly
+        /><br />
+        <input type="submit" name="" id="sub" /><br />
+        <div><em> 패턴에 맞출것 </em></div>
+      </form>
+    </fieldset>
+  </body>
+</html>
