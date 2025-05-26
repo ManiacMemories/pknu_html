@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        /* border-collapse: collapse; */
+        margin: auto;
+        text-align: center;
+      }
+      th,
+      tr,
+      td {
+        border: 1px solid blue;
+        padding: 5px 10px;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        const inp1 = prompt("한줄에 몇명 앉을래?");
+        const inp2 = prompt("총인원 몇명?");
+
+        let list = "<table border='1'>";
+        for (let j = 0; j < (inp2/inp1); j++) {
+          list += "<tr>";
+          for (let i = 1; i <= inp1; i++) {
+            const num = j * inp1 + i;
+            if (num > inp2) break;
+            list += `<td>좌석${num}</td>`;
+          }
+          list += "</tr>";
+        }
+        list += "</table>";
+        document.body.innerHTML = list;
+      </script>
+  </body>
+</html>

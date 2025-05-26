@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let list = `
+     `; // 최종출력
+      let epoch = 10000; // 횟수
+      let turn = 0; // 증가값
+      const arr = [0, 0, 0, 0, 0, 0];
+
+      while (turn < epoch) {
+        const ran = Math.floor(Math.random() * 6) + 1; // 1~6
+        arr[ran - 1]++;
+        turn++;
+      }
+      const arr0 = ((arr[0] / epoch) * 100).toFixed(1);
+      const arr1 = ((arr[1] / epoch) * 100).toFixed(1);
+      const arr2 = ((arr[2] / epoch) * 100).toFixed(1);
+      const arr3 = ((arr[3] / epoch) * 100).toFixed(1);
+      const arr4 = ((arr[4] / epoch) * 100).toFixed(1);
+      const arr5 = ((arr[5] / epoch) * 100).toFixed(1);
+
+      list += `    <h1>주사위 확률</h1><table>`;
+      list += `    <tr>`;
+      list += `      <th>숫자</th>`;
+      list += `      <th>기본확률</th>`;
+      list += `      <th>개수</th>`;
+      list += `      <th>검증</th>`;
+      list += `    </tr>`;
+      list += `    <tr>`;
+      list += `      <td>1</td>`;
+      list += `      <td>16.6%</td>`;
+      list += `      <td>${arr[0]}</td>`;
+      list += `      <td>${arr0}%</td>`;
+      list += `    </tr>`;
+      list += `    <tr>`;
+      list += `      <td>2</td>`;
+      list += `      <td>16.6%</td>`;
+      list += `      <td>${arr[1]}</td>`;
+      list += `      <td>${arr1}%</td>`;
+      list += `    </tr>`;
+      list += `    <tr>`;
+      list += `      <td>3</td>`;
+      list += `      <td>16.6%</td>`;
+      list += `      <td>${arr[2]}</td>`;
+      list += `      <td>${arr2}%</td>`;
+      list += `    </tr>`;
+      list += `    <tr>`;
+      list += `      <td>4</td>`;
+      list += `      <td>16.6%</td>`;
+      list += `      <td>${arr[3]}</td>`;
+      list += `      <td>${arr3}%</td>`;
+      list += `    </tr>`;
+      list += `    <tr>`;
+      list += `      <td>5</td>`;
+      list += `      <td>16.6%</td>`;
+      list += `      <td>${arr[4]}</td>`;
+      list += `      <td>${arr4}%</td>`;
+      list += `    </tr>`;
+      list += `    <tr>`;
+      list += `      <td>6</td>`;
+      list += `      <td>16.6%</td>`;
+      list += `      <td>${arr[5]}</td>`;
+      list += `      <td>${arr5}%</td>`;
+      list += `    </tr>`;
+      list += `    <tr>`;
+      list += `      <td>검증</td>`;
+      list += `      <td>100%</td>`;
+      list += `      <td>${
+        arr[0] + arr[1] + arr[2] + arr[3] + arr[4] + arr[5]
+      }</td>`;
+      list += `      <td>${(
+        ((arr[0] + arr[1] + arr[2] + arr[3] + arr[4] + arr[5]) / epoch) *
+        100
+      ).toFixed(1)}%</td>`;
+      list += `</tr>`;
+      list += `</table> <div class="btn"><button onclick="location.reload(true)">새로고침</button>
+      <button onclick="alert('아이템 드롭 확률조회입니다.')">팝업</button></div>`;
+
+      document.body.innerHTML = list;
+    </script>
+  </body>
+</html>

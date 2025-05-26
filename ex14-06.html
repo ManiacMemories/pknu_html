@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <script>
+        let input1 = Number(prompt("처음 숫자를 입력하세요"));
+        let input2 = Number(prompt("마지막 숫자를 입력하세요"));
+        let output = 0;
+
+      for (let i = input1; i <= input2; i++) {
+        output += i;
+      }
+
+      document.body.innerHTML += `<h3>${input1}부터 ${input2}까지 숫자를 모두 더하면 ${output}입니다.</h3>`;
+    </script>
+  </body>
+</html>
