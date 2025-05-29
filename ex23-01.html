@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .content {
+        color: white;
+        text-align: center;
+        padding: 50px;
+      }
+      #about {
+        background-color: tomato;
+        display: none;
+      }
+      #products {
+        background-color: cadetblue;
+        display: none;
+      }
+      #technology {
+        background-color: rgb(25, 55, 36);
+        display: none;
+      }
+      #downloads {
+        background-color: rgb(131, 144, 77);
+        display: none;
+      }
+      #etc {
+        background-color: rgb(192, 85, 154);
+        display: none;
+      }
+      .tab {
+        float: left;
+        background-color: rgb(166, 176, 177);
+        color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 1rem;
+        width: 20%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- (div.content>h1+p)*5 -->
+    <div id="about" class="content">
+      <h1>About</h1>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+    <div id="products" class="content">
+      <h1>Products</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+        consequuntur!
+      </p>
+    </div>
+    <div id="technology" class="content">
+      <h1>Technology</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div id="downloads" class="content">
+      <h1>Downloads</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
+        temporibus iusto quam.
+      </p>
+    </div>
+    <div id="etc" class="content">
+      <h1>Etc</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur?
+      </p>
+    </div>
+
+    <!-- div.tab-container>button.tab*5 -->
+    <div class="tab-container">
+      <button class="tab" onclick="openMenu('about',this,'tomato')">
+        About
+      </button>
+      <button class="tab" onclick="openMenu('products',this,'cadetblue')">
+        Products
+      </button>
+      <button
+        class="tab"
+        onclick="openMenu('technology',this,'rgb(25, 55, 36)')"
+      >
+        Technology
+      </button>
+      <button
+        class="tab"
+        onclick="openMenu('downloads',this,'rgb(131, 144, 77)')"
+      >
+        Downloads
+      </button>
+      <button class="tab" onclick="openMenu('etc',this,'rgb(192, 85, 154)')">
+        Etc
+      </button>
+    </div>
+
+    <script>
+      const openMenu = (targetId, currentBtn, color) => {
+        const contents = document.querySelectorAll(".content");
+        const tabs = document.querySelectorAll(".tab");
+        contents.forEach((v) => {
+          v.style.display = "none";
+        });
+        tabs.forEach((v) => {
+          v.style.backgroundColor = "rgb(166,176,177)";
+        });
+        document.getElementById(targetId).style.display = "block";
+        currentBtn.style.backgroundColor = color;
+      };
+    </script>
+  </body>
+</html>
